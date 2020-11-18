@@ -8,7 +8,7 @@ class Menu:
         print()
         print("............................ DIVINARUM ..............................")
         print()
-        print(' A competitive role-playing game about random predictions,')
+        print(' A competitive text-based role-playing guessing game,')
         print(' where you play as a wizard and have to outguess an AI-driven rival')
         print(' to be able to decipher a strange message sent to your Magical Order.')
         print()
