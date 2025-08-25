@@ -8,8 +8,8 @@ class Reader:
     reads the text from included files
     """
 
-    license_dir = "txt_files\\license.txt"
-    namegen_sources_dir = "txt_files\\namegen_sources.txt"
+    license_dir = "divinarum/txt_files/license.txt"
+    namegen_sources_dir = "divinarum/txt_files/namegen_sources.txt"
 
     @staticmethod
     def get_file_path(rel_path):
