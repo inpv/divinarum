@@ -1,4 +1,4 @@
-# !python 3.7.4
+# !python 3.11.13
 
 import random
 from divinarum.menu import Menu

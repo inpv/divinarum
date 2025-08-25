@@ -1,4 +1,4 @@
-# !python 3.7.4
+# !python 3.11.13
 import lorem   # to generate initial message
 
 
