@@ -93,7 +93,7 @@ class GameMaster:
 
         for i in range(times):
             for j in range(width):
-                time.sleep(0.8)
+                time.sleep(0.5)
                 sys.stdout.write(".")
             sys.stdout.write("\r")
             sys.stdout.flush()
