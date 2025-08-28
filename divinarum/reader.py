@@ -1,6 +1,7 @@
 # !python 3.11.13
 import os
 import sys
+import time
 
 
 class Reader:
@@ -24,6 +25,20 @@ class Reader:
             file_path = os.path.abspath(os.path.join(os.getcwd(), rel_path))
 
         return file_path
+
+    @staticmethod
+    def print_dots():
+        width = 3
+        times = 3
+
+        for i in range(times):
+            for j in range(width):
+                time.sleep(0.5)
+                sys.stdout.write(".")
+            sys.stdout.write("\r")
+            sys.stdout.flush()
+        sys.stdout.write("\n")
+        print()
 
     @staticmethod
     def read_text_file(file_name):

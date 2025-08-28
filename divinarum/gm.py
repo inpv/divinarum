@@ -3,9 +3,8 @@ from divinarum.ai import AI
 from divinarum.textgen import TextGenerator
 from divinarum.crypt import Crypt
 from divinarum.namegen import NameGenerator
+from divinarum.reader import Reader
 import random
-import time  # to print text gradually
-import sys
 
 
 class GameMaster:
@@ -87,20 +86,6 @@ class GameMaster:
     # STRING METHODS
 
     @staticmethod
-    def print_dots():
-        width = 3
-        times = 3
-
-        for i in range(times):
-            for j in range(width):
-                time.sleep(0.5)
-                sys.stdout.write(".")
-            sys.stdout.write("\r")
-            sys.stdout.flush()
-        sys.stdout.write("\n")
-        print()
-
-    @staticmethod
     def introduce_situation():
 
         # should probably put the text into json and then read it with the reader class, idk
@@ -150,7 +135,7 @@ class GameMaster:
             for item in list(sentence):
                 print(item)
             print()
-            GameMaster.print_dots()
+            Reader.print_dots()
 
     @staticmethod
     def generate_opponents_desc():
@@ -214,7 +199,7 @@ class GameMaster:
             for item in list(sentence):
                 print(item)
             print()
-            GameMaster.print_dots()
+            Reader.print_dots()
 
         print('It looks like something in between ' + str(GameMaster.lower_border) +
               ' and ' + str(GameMaster.upper_border) + '.')
