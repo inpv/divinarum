@@ -1,7 +1,6 @@
 # !python 3.11.13
 from divinarum.textgen import TextGenerator
 from divinarum.crypt import Crypt
-from divinarum.namegen import NameGenerator
 from divinarum.reader import Reader
 import random
 
@@ -165,9 +164,26 @@ class GameMaster:
         return desc
 
     @staticmethod
+    def generate_rand_name():
+        """
+        generates a silly random first and last name for the rival from a long list of names
+        """
+
+        words_file = open(Reader.get_file_path(Reader.namegen_sources_dir), "r")
+
+        word_obj = words_file.read()
+        words = word_obj.split()
+
+        upper_words = [word for word in words if word[0].isupper()]
+        name_words = [word for word in upper_words if not word.isupper()]
+        char_name = ' '. \
+            join([name_words[random.randint(1, len(name_words))] for i in range(2)])
+        return char_name
+
+    @staticmethod
     def introduce_opponent():
 
-        GameMaster.name = NameGenerator.rand_name()
+        GameMaster.name = GameMaster.generate_rand_name()
         GameMaster.description = GameMaster.generate_opponents_desc()
         print('Your opponent is ' + GameMaster.name + GameMaster.description)
 
