@@ -4,7 +4,6 @@ import random
 from divinarum.menu import Menu
 from divinarum.gm import GameMaster
 from divinarum.player import Player
-from divinarum.ai import AI
 from divinarum.reader import Reader
 from divinarum.inputoutput import InputOutput
 
@@ -21,7 +20,6 @@ class Game:
 
     io_interface = InputOutput()  # handles the button presses
     game_player = Player()  # data for player
-    game_ai = AI()  # our (not so)dumb enemy
     game_files_reader = Reader()  # text files' parser
     main_menu = Menu()  # the start screen and the menu
     game_master = GameMaster()  # sets the game conditions and tells the story
@@ -113,9 +111,9 @@ class Game:
 
                     # AI GUESSING BLOCK
                     print('Now your opponent takes a guess!')
-                    guessed_ai_number = Game.game_ai.guess_number_randomly(GameMaster.lower_border,
+                    guessed_ai_number = Game.game_master.generate_random_int(GameMaster.lower_border,
                                                                            GameMaster.upper_border)
-                    print(Game.game_ai.generate_opponents_action())
+                    print(Game.game_master.generate_opponents_action())
                     print("Your opponent's guess is " + str(guessed_ai_number) + '.')
                     print()
 
@@ -136,7 +134,7 @@ class Game:
                     if int(guessed_human_number) == GameMaster.desired_number and guessed_ai_number != \
                             GameMaster.desired_number:
                         print("Congratulations, " + str(InputOutput.player_name) + "! " +
-                              "You won the game. Flawless victory over " + str(AI.name) + ".")  # move to gm?
+                              "You won the game. Flawless victory over " + str(GameMaster.name) + ".")  # move to gm? UPD: moved
                         print()
                         GameMaster.show_victory_message()
                         Game.round_number = 0  # clearing the rounds count
@@ -152,7 +150,7 @@ class Game:
                     elif int(guessed_human_number) != GameMaster.desired_number and guessed_ai_number == \
                             GameMaster.desired_number:
                         print('You lost to your opponent.')
-                        print(AI.generate_opponents_response())
+                        print(GameMaster.generate_opponents_response())
                         print()
                         GameMaster.show_loss_message()
                         Game.round_number = 0  # clearing the rounds count

@@ -1,5 +1,4 @@
 # !python 3.11.13
-from divinarum.ai import AI
 from divinarum.textgen import TextGenerator
 from divinarum.crypt import Crypt
 from divinarum.namegen import NameGenerator
@@ -19,14 +18,15 @@ class GameMaster:
     upper_border = None  # upper border for AI guessing
     crypt_key = None  # the key used for en/decrypting the message
     coded_message = None
+    name = ''  # opponent's name
+    description = ''  # opponent's desc
+
 
     # INT METHODS
 
     @staticmethod
     def generate_random_int(start, end):
-
         random_int = random.randint(start, end)
-
         return random_int
 
     @staticmethod
@@ -138,6 +138,23 @@ class GameMaster:
             Reader.print_dots()
 
     @staticmethod
+    def generate_opponents_action():
+        rival_guess_replies = \
+            ['Your rival reaches his hands to the crystal ball and starts muttering some incomprehensible gibberish...',
+             'Your rival draws a sigil in the air to see the insides of the ball more clearly...',
+             'Your rival stares into the ball blankly for quite some time...']
+        action = random.choice(rival_guess_replies)
+        return action
+
+    @staticmethod
+    def generate_opponents_response():
+        opponent_response_list = ['You will never defeat me.', 'Your skills are worthless compared to mine.',
+                                  'Looks like the arcane arts are not for you.']
+        taunt = random.choice(opponent_response_list)
+        resp = "[" + str(GameMaster.name) + "]:" + " " + taunt
+        return resp
+
+    @staticmethod
     def generate_opponents_desc():
         # randomly choosing the opponents' description from a predefined list
 
@@ -150,9 +167,9 @@ class GameMaster:
     @staticmethod
     def introduce_opponent():
 
-        AI.name = NameGenerator.rand_name()
-        AI.description = GameMaster.generate_opponents_desc()
-        print('Your opponent is ' + AI.name + AI.description)
+        GameMaster.name = NameGenerator.rand_name()
+        GameMaster.description = GameMaster.generate_opponents_desc()
+        print('Your opponent is ' + GameMaster.name + GameMaster.description)
 
     @staticmethod
     def generate_message():
