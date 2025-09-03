@@ -64,12 +64,12 @@ class Game:
                     if InputOutput.player_answer in ['y', 'y']:
                         break
                     elif InputOutput.player_answer in ['n', 'N']:
-                        Game.game_master.introduce_situation()
+                        Game.game_master.generate_desc_from_json_by_key("introduce_situation")
                         break
                     else:
                         InputOutput.handle_general_exception()
                 else:
-                    Game.game_master.introduce_situation()
+                    Game.game_master.generate_desc_from_json_by_key("introduce_situation")
 
                 # GAME INTRO SHOWN
                 Game.intro_shown = True
@@ -94,7 +94,7 @@ class Game:
                 Game.io_interface.request_anykey()
 
                 # THE INTRO FOR EACH GAME
-                Game.game_master.show_game_intro()
+                Game.game_master.generate_desc_from_json_by_key("show_game_intro")
 
                 # THE ROUND STARTS
 

@@ -1,0 +1,59 @@
+{
+  "introduce_situation": [
+            [
+                "Lately, the Hermetic Order, which you happen to be a part of,",
+                "received a strange message said to contain a prophecy about the Order's future.",
+                "Unfortunately, no one could interpret it properly to this moment."
+             ],
+            [
+                "As one of the Order's prominent members, you think that this may be your big chance,",
+                "since you are highly skilled at divination,",
+                "having practiced spells of this school for years."
+            ],
+            [
+                "You could show your importance to the Order as well as advance in the Mages' ranks.",
+                "So, with great hope in heart, you enter the Order's secret temple, where the meetings take place."
+            ],
+            [
+                "However, as you walk into the splendidly decorated Main Hall,",
+                "you notice that you are not the only one to test your luck."
+            ],
+            [
+                "A wizard from a notorious rival magic school has also come to the challenge.",
+                "The Archmagister decides that the best option, since there are two candidates,",
+                "would be to organize several rounds, in which both of you will try do decipher the message."
+            ],
+            [
+                "The first to find the key correctly wins the contest and gets all the praise.",
+                "However, in order not to make this easy, the number of rounds will be decided based on your skill."
+            ],
+            [
+                "None of the contestants knows the exact number,",
+                "but since your skill level is pretty much the same as your rival's,",
+                "it won't bother you too much, you think."
+            ],
+            [
+                "To win in this contest, you need to correctly interpret the signs which the crystal ball shows.",
+                "Your rival will also try to decipher the same signs."
+            ]
+        ],
+  "show_game_intro": [
+            [
+                "To decipher the message you use an old technique - scrying with the crystal ball.",
+                "So both of you, aided by the Archmagister, have come to the ritual chamber."
+            ],
+            [
+                "On an intricately carved oaken table stands the crystal ball.",
+                "It is glowing with shimmering light."
+            ],
+            [
+                "While you are looking at it, the clouds outside the temple,",
+                "permeating through the opulent stained glass paintings on the gothic windows,",
+                "reflect in the ball in strange shapes."
+            ],
+            [
+                "In the center of the ball appears something that looks like a number,",
+                "but it cannot be seen clearly."
+            ]
+        ]
+}

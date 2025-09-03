@@ -85,56 +85,19 @@ class GameMaster:
     # STRING METHODS
 
     @staticmethod
-    def introduce_situation():
+    def generate_desc_from_json_by_key(key):
 
         # should probably put the text into json and then read it with the reader class, idk
-
-        sentences = [
-            {
-                "Lately, the Hermetic Order, which you happen to be a part of,": 1,
-                "received a strange message said to contain a prophecy about the Order's future.": 1,
-                "Unfortunately, no one could interpret it properly to this moment.": 1,
-             },
-            {
-                "As one of the Order's prominent members, you think that this may be your big chance,": 2,
-                "since you are highly skilled at divination,": 2,
-                "having practiced spells of this school for years.": 2,
-            },
-            {
-                "You could show your importance to the Order as well as advance in the Mages' ranks.": 3,
-                "So, with great hope in heart, you enter the Order's secret temple, where the meetings take place.": 3,
-            },
-            {
-                "However, as you walk into the splendidly decorated Main Hall,": 4,
-                "you notice that you are not the only one to test your luck.": 4,
-            },
-            {
-                "A wizard from a notorious rival magic school has also come to the challenge.": 5,
-                "The Archmagister decides that the best option, since there are two candidates,": 5,
-                "would be to organize several rounds, in which both of you will try do decipher the message.": 5,
-            },
-            {
-                "The first to find the key correctly wins the contest and gets all the praise.": 6,
-                "However, in order not to make this easy, the number of rounds will be decided based on your skill.": 6,
-            },
-            {
-                "None of the contestants knows the exact number,": 7,
-                "but since your skill level is pretty much the same as your rival's,": 7,
-                "it won't bother you too much, you think.": 7,
-            },
-            {
-                "To win in this contest, you need to correctly interpret the signs which the crystal ball shows.": 8,
-                "Your rival will also try to decipher the same signs.": 8,
-            }
-        ]
+        # AAANNND, DONE!
 
         print()
+        Reader.print_json_by_key(key, path=Reader.json_data_dir)
 
-        for sentence in sentences:
-            for item in list(sentence):
-                print(item)
-            print()
-            Reader.print_dots()
+        if key == "show_game_intro":
+            print('It looks like something in between ' + str(GameMaster.lower_border) +
+                  ' and ' + str(GameMaster.upper_border) + '.')
+        elif key == "introduce_situation":
+            pass
 
     @staticmethod
     def generate_opponents_action():
@@ -202,40 +165,6 @@ class GameMaster:
         decoded_message = Crypt.caesar_cipher(GameMaster.crypt_key, GameMaster.coded_message, encrypted=True)
 
         return decoded_message
-
-    @staticmethod
-    def show_game_intro():
-
-        sentences = [
-            {
-                "To decipher the message you use an old technique - scrying with the crystal ball.": 1,
-                "So both of you, aided by the Archmagister, have come to the ritual chamber.": 1,
-            },
-            {
-                "On an intricately carved oaken table stands the crystal ball.": 2,
-                "It is glowing with shimmering light.": 2,
-            },
-            {
-                "While you are looking at it, the clouds outside the temple,": 3,
-                "permeating through the opulent stained glass paintings on the gothic windows,": 3,
-                "reflect in the ball in strange shapes.": 3,
-            },
-            {
-                "In the center of the ball appears something that looks like a number,": 4,
-                "but it cannot be seen clearly.": 4,
-            },
-        ]
-
-        print()
-
-        for sentence in sentences:
-            for item in list(sentence):
-                print(item)
-            print()
-            Reader.print_dots()
-
-        print('It looks like something in between ' + str(GameMaster.lower_border) +
-              ' and ' + str(GameMaster.upper_border) + '.')
 
     @staticmethod
     def show_victory_message():
